@@ -16,3 +16,22 @@ if __name__ == '__main__':
     print(info1.qualified_username)
     print(info2.qualified_username)
 ```
+
+## Distribution
+The following commands should be entered into the venv console:
+
+Windows:
+
+    rmdir /S build
+    rmdir /S dist
+    py -m build
+    py -m pip install --upgrade twine
+    py -m twine upload dist/*
+
+Linux:
+
+    rm -r build
+    rm -r dist
+    python3 -m build
+    python3 -m pip install --upgrade twine
+    python3 -m twine upload dist/*
