@@ -1,5 +1,6 @@
 # Battlefy-Toolkit
-A toolkit to download Battlefy data.
+A toolkit to download Battlefy data made by Inkling Research Labs (IPL).
+Code on [Github](https://github.com/IPLSplatoon/Battlefy-Toolkit).
 
 ## Requirements
 - Python 3.9+
