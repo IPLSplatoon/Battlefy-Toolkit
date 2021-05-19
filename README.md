@@ -2,6 +2,8 @@
 A toolkit to download Battlefy data made by Inkling Research Labs (IPL).
 Code on [Github](https://github.com/IPLSplatoon/Battlefy-Toolkit).
 
+Import prefix is `battlefy_toolkit`.
+
 ## Requirements
 - Python 3.9+
 
@@ -24,6 +26,7 @@ Windows:
 
     rmdir /S build
     rmdir /S dist
+    py -m pip install --upgrade build
     py -m build
     py -m pip install --upgrade twine
     py -m twine upload dist/*
@@ -32,6 +35,7 @@ Linux:
 
     rm -r build
     rm -r dist
+    python3 -m pip install --upgrade build
     python3 -m build
     python3 -m pip install --upgrade twine
     python3 -m twine upload dist/*

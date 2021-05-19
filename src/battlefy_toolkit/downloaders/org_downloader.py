@@ -3,8 +3,8 @@ from typing import Optional
 
 import requests
 
-from downloaders.download_utils import fetch_json
-from endpoints.addresses import ORG_ADDRESS_FORMAT, ORG_SEARCH_FORMAT
+from battlefy_toolkit.downloaders.download_utils import fetch_json
+from battlefy_toolkit.endpoints.addresses import ORG_ADDRESS_FORMAT, ORG_SEARCH_FORMAT
 
 HEADERS = {
     "Cache-Control": "no-cache",

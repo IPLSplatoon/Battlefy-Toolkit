@@ -1,6 +1,7 @@
 from typing import Optional, List
 
-from objects import TournamentInfo, TournamentTeam, TournamentStage
+from battlefy_toolkit.objects import TournamentInfo, TournamentTeam
+from battlefy_toolkit.objects import TournamentStage
 
 
 class Tournament:

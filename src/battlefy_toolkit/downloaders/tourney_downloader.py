@@ -1,8 +1,8 @@
 import logging
 from typing import Optional, Set, List
 
-from downloaders.download_utils import fetch_json
-from endpoints.addresses import TOURNAMENT_INFO_FETCH_ADDRESS_FORMAT, STAGE_INFO_FETCH_ADDRESS_FORMAT, \
+from battlefy_toolkit.downloaders.download_utils import fetch_json
+from battlefy_toolkit.endpoints.addresses import TOURNAMENT_INFO_FETCH_ADDRESS_FORMAT, STAGE_INFO_FETCH_ADDRESS_FORMAT, \
     TEAMS_FETCH_ADDRESS_FORMAT, TOURNAMENT_BASIC_INFO_FETCH_ADDRESS_FORMAT
 
 
