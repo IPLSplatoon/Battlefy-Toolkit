@@ -2,8 +2,10 @@ import logging
 from typing import Optional, Set, List
 
 from battlefy_toolkit.downloaders.download_utils import fetch_json
+from battlefy_toolkit.downloaders.org_downloader import get_tournament_ids
 from battlefy_toolkit.endpoints.addresses import TOURNAMENT_INFO_FETCH_ADDRESS_FORMAT, STAGE_INFO_FETCH_ADDRESS_FORMAT, \
     TEAMS_FETCH_ADDRESS_FORMAT, TOURNAMENT_BASIC_INFO_FETCH_ADDRESS_FORMAT
+from battlefy_toolkit.org_lists.splatoon_orgs import ORG_SLUGS
 
 
 def get_basic_tournament_info(tournament_id: str) -> Optional[dict]:
@@ -30,7 +32,7 @@ def get_tourney_info_file(tourney_id_to_fetch: str) -> Optional[dict]:
 
 
 def get_tourney_teams_file(tourney_id_to_fetch: str) -> Optional[List[dict]]:
-    teams_contents = fetch_json(TEAMS_FETCH_ADDRESS_FORMAT % tourney_id_to_fetch)
+    teams_contents = fetch_json(TEAMS_FETCH_ADDRESS_FORMAT.format(tourney_id=tourney_id_to_fetch))
 
     if len(teams_contents) == 0:
         logging.error(f'Nothing exists at {tourney_id_to_fetch=}.')
@@ -78,10 +80,12 @@ def get_or_fetch_tourney_ids() -> Set[str]:
 
     result = set()
     for org in ORG_SLUGS:
-        tournaments = battlefyToolkit.tournament_ids(org)
+        tournaments = get_tournament_ids(org)
         if tournaments:
             for t in tournaments:
-                tournament_info = get_or_fetch_tourney_info_file(t)
-                if tournament_info and tournament_info.get("gameName") == "Splatoon 2":
-                    result.add(t)
+                tournament_info = get_tourney_info_file(t)
+                if tournament_info:
+                    name = tournament_info.get("gameName")
+                    if name.startswith("Splatoon"):
+                        result.add(t)
     return result
