@@ -5,8 +5,8 @@ from datetime import datetime
 
 
 class Series:
-    def __init__(self, round: int, num_games: int):
-        self.round = round
+    def __init__(self, round_num: int, num_games: int):
+        self.round = round_num
         self.num_games = num_games
 
 

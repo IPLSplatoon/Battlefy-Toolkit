@@ -84,8 +84,8 @@ class Rules:
 
 
 class Series:
-    def __init__(self, round: int, num_games: int, round_type: Optional[str], round_text: Optional[str]):
-        self.round = round
+    def __init__(self, round_num: int, num_games: int, round_type: Optional[str], round_text: Optional[str]):
+        self.round = round_num
         self.num_games = num_games
         self.round_type = round_type
         self.round_text = round_text
