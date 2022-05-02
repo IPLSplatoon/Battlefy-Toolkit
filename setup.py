@@ -11,7 +11,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='battlefy_toolkit-Slate',
-    version='1.2.1',
+    version='1.2.2',
     author='IPL/Slate',
     email='security@iplabs.ink',
     description='IPL Battlefy Toolkit',
